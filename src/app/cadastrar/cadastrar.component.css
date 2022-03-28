@@ -1,0 +1,29 @@
+article{
+background:url("https://img.freepik.com/fotos-gratis/explosao-roxa-do-po-no-fundo-branco_36326-292.jpg");
+background-size: cover;
+}
+
+form{
+    text-transform: capitalize;
+    color: blue;
+    
+    text-align: center;
+    font-size: 1.3em;
+}
+
+
+
+fieldset {
+    border-radius: 20px;
+    margin-top: 2%;
+
+}
+
+input {
+    display: block;
+    margin: auto;
+    height: 3em;
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
