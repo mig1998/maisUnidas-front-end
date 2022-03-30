@@ -6,18 +6,20 @@
     <fieldset>
         <legend>Cadastro</legend>
         <label for="nome">Nome Completo:</label>
-        <input type="text" placeholder="Nome Completo" id="nome" name="nome">
+        <input type="text" [(ngModel)]="usuario.nome" placeholder="Nome Completo" id="nome" name="nome">
 
         <label for="email">Email:</label>
-        <input type="email" placeholder="Email" id="email" name="email">
+        <input type="email" [(ngModel)]="usuario.usuario" placeholder="Email" id="email" name="email">
 
         <label for="senha">senha:</label>
-        <input type="text" placeholder="Senha" id="senha" name="senha">
+        <input type="password" (input)="confirmarSenha($event)" placeholder="Senha" id="senha" name="senha">
 
         <label for="confirmsenha">Confirmar Senha:</label>
-        <input type="text" placeholder="Confirmar Senha" id="confirmsenha" name="confirmsenha">
-        <button class="btn btn-primary mt-2" type="submit">Cadastrar</button>
-        <a class="btn btn-danger ml-4 mt-2 p-2" routerLink="/login">Cancelar</a>
+        <input type="password" [(ngModel)]="usuario.senha"  placeholder="Confirmar Senha" id="confirmsenha" name="confirmsenha">
+     
+     
+        <button class="btn btn-primary mt-2" type="submit" (click)="cadastrarUsuario()">Cadastrar</button>
+        <a class="btn btn-danger ml-4 mt-2 p-2" routerLink="/entrar">Cancelar</a>
     </fieldset>
 
 </form>

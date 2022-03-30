@@ -9,12 +9,12 @@
             <fieldset>
                 <legend>Logar</legend>
                 <label for="email">Email:</label>
-                <input type="email" placeholder="Email" id="email" name="email">
+                <input type="email" [(ngModel)]="usuarioLogin.usuario" placeholder="Email" id="email" name="email">
 
                 <label for="senha">senha:</label>
-                <input type="text" placeholder="Senha" id="senha" name="senha">
+                <input type="password"  [(ngModel)]="usuarioLogin.senha" placeholder="Senha" id="senha" name="senha">
 
-                <button type="submit" class="btn btn-primary m-2">Cadastrar</button>
+                <button type="submit" class="btn btn-primary m-2" (click)="Entrar()">Entrar</button>
                 <p class="text-center">
                     Nao tem uma conta? <a routerLink="/cadastrar">Crie uma Agora</a>
                 </p>
