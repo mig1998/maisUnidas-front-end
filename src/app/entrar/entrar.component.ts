@@ -19,7 +19,8 @@ export class EntrarComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit() {
+  ngOnInit():void {
+    window.scroll(0,0);
   }
 
 Entrar() {

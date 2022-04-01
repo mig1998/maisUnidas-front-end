@@ -1,28 +1,32 @@
 
 <article class="container-fluid">
-    <section class="row">
-        <section class="col-md-8">IMAGEM</section>
+    <section class="row  d-flex justify-content-center">
+        
+        <section class="col-md-6 mt-5 pt-3">
+        <form class= "lead mt-5" action="">
 
-
-        <form class="col-md-4" action="">
-
-            <fieldset>
-                <legend>Logar</legend>
+         
+                <h3 class="text-monospace">Entrar</h3>
                 <label for="email">Email:</label>
                 <input type="email" [(ngModel)]="usuarioLogin.usuario" placeholder="Email" id="email" name="email">
 
                 <label for="senha">senha:</label>
                 <input type="password"  [(ngModel)]="usuarioLogin.senha" placeholder="Senha" id="senha" name="senha">
 
-                <button type="submit" class="btn btn-primary m-2" (click)="Entrar()">Entrar</button>
-                <p class="text-center">
+                <button type="submit" class="btn mt-4" (click)="Entrar()">Entrar</button>
+               
+                <p class="text-center lead mt-4">
                     Nao tem uma conta? <a routerLink="/cadastrar">Crie uma Agora</a>
                 </p>
-            </fieldset>
-
+         
         </form>
+
+        </section>
+        <section class="col-md-6 borda mt-4"><img src="../../assets/imgs/entrar.gif" width="500" height="530" alt=""></section>
 
 
     </section>
+
+        
 
 </article>

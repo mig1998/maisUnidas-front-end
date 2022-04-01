@@ -1,41 +1,131 @@
+<!-- PERFIL -->
 <article class="container-fluid text-center">
-    <section class="row">
-        
-        
-        <section class="col-md-3 border border-primary">
-         
-         <h1>PERFIL:</h1>
-         
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid animi aut corrupti libero mollitia tempora porro ipsa ad commodi, expedita illum nisi qui quasi. Voluptatem incidunt corporis fugit? Ipsa, a.
-          </p>
-
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, earum. Aperiam totam earum, facilis dolorem ad odio cupiditate hic, veniam incidunt optio, reprehenderit quaerat sequi repellat error! Consequuntur, impedit quae.</p>
-        </section>
+  <section class="row">
 
 
+    <section class="col-md-3 border border-primary">
 
+      <h1>PERFIL:</h1>
 
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid animi aut corrupti libero mollitia tempora
+        porro ipsa ad commodi, expedita illum nisi qui quasi. Voluptatem incidunt corporis fugit? Ipsa, a.
+      </p>
 
-        <section class="col-md-6">
-           
-       <h1>Feed:</h1>
-        
-       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores sed id nesciunt tempore accusantium hic consequuntur, corrupti inventore provident iure quae. Commodi facere ullam incidunt fugit corporis sit impedit illo!</p>
-        
-       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores sed id nesciunt tempore accusantium hic consequuntur, corrupti inventore provident iure quae. Commodi facere ullam incidunt fugit corporis sit impedit illo!</p>
-        
-       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores sed id nesciunt tempore accusantium hic consequuntur, corrupti inventore provident iure quae. Commodi facere ullam incidunt fugit corporis sit impedit illo!</p>
-        
-       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores sed id nesciunt tempore accusantium hic consequuntur, corrupti inventore provident iure quae. Commodi facere ullam incidunt fugit corporis sit impedit illo!</p>
-       
-
-        </section>
-
-        <section class="col-md-3">
-            
-                    <app-menulateral></app-menulateral>
-            
-                </section>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, earum. Aperiam totam earum, facilis
+        dolorem ad odio cupiditate hic, veniam incidunt optio, reprehenderit quaerat sequi repellat error! Consequuntur,
+        impedit quae.</p>
     </section>
+
+
+
+
+
+    <section class="col-md-9 mt-3">
+
+      <div class="text-left">
+      <button class="btn btn-primary" data-toggle="modal" data-target="#novaPostagem">Nova Posttagem</button>
+      </div>
+      <!-- POSTAGENS -->
+
+      <article class="container-fluid" id="postagens">
+
+        <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#TodasPostagens" role="tab"
+              aria-controls="nav-TodasPostagens" aria-selected="true">Todas Postagens</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="MinhasPostagens-tab" data-toggle="tab" href="#MinhasPostagens" role="tab"
+              aria-controls="MinhasPostagens" aria-selected="false">minhas Postagens</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="PostagemTema-tab" data-toggle="tab" href="#PostagemTema" role="tab"
+              aria-controls="PostagemTema" aria-selected="false">Postagem por tema</a>
+          </li>
+        </ul>
+
+
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="TodasPostagens" role="tabpanel"
+            aria-labelledby="TodasPostagens-tab">..agora sao
+            todas.</div>
+          <div class="tab-pane fade show" id="MinhasPostagens" role="tabpanel"
+            aria-labelledby="nav-MinhasPostagens-tab">...minhas</div>
+
+          <div class="tab-pane fade" id="PostagemTema" role="tabpanel" aria-labelledby="PostagemTema-tab">Tema</div>
+        </div>
+
+
+      </article>
+      <!-- FIM POSTAGENS -->
+
+
+
+      <h1>Feed:</h1>
+
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores sed id nesciunt tempore accusantium hic
+        consequuntur, corrupti inventore provident iure quae. Commodi facere ullam incidunt fugit corporis sit impedit
+        illo!</p>
+
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores sed id nesciunt tempore accusantium hic
+        consequuntur, corrupti inventore provident iure quae. Commodi facere ullam incidunt fugit corporis sit impedit
+        illo!</p>
+
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores sed id nesciunt tempore accusantium hic
+        consequuntur, corrupti inventore provident iure quae. Commodi facere ullam incidunt fugit corporis sit impedit
+        illo!</p>
+
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores sed id nesciunt tempore accusantium hic
+        consequuntur, corrupti inventore provident iure quae. Commodi facere ullam incidunt fugit corporis sit impedit
+        illo!</p>
+
+
+    </section>
+
+
+  </section>
 </article>
+
+
+
+<!-- Modal NOVA PUBLICACAO -->
+<div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="novaPostagemLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="novaPostagemLabel">Nova Publicação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+
+      <div class="modal-body">
+
+        <form class="form-group" action="">
+          <label for="titulo">Titulo</label>
+          <input type="text" id="titulo" class="form-control">
+
+          <label for="descricao">Texto</label>
+          <textarea name="texto" id="descricao" rows="3" class="form-control"></textarea>
+
+          <label for="texto">Escolha um tema ou </label><a routerLink="/tema" data-dismiss="modal">cadastre um tema</a>
+          <select name="tema" class="form-control mt-2" id="">
+
+            <option value="">Temas</option>
+
+          </select>
+
+        </form>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success">Publicar</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,30 +1,41 @@
 article{
-    background: url("https://st4.depositphotos.com/15504030/i/600/depositphotos_403776404-stock-photo-powder-explosion-closeup-purple-dust.jpg");
-     background-repeat: no-repeat;
-     background-size: cover;
-    }
-    
+      min-height: 26.4em;
+      background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
     form{
         text-transform: capitalize;
-        color: rgb(37, 1, 37);
-        
+        color:rgb(250, 244, 244);
         text-align: center;
+        background-color: rgba(70, 3, 54, 0.589);
         font-size: 1.3em;
-    }
+        border-radius: 3em;
+        margin: auto;
+     }
     
     
-    fieldset {
-        border-radius: 20px;
-        margin-top: 2%;
-    
-    }
+ form a{
+     color:rgb(43, 8, 77);
+     text-decoration: none;
+ }
     
     input {
-        display: block;
         margin: auto;
+        display: block;
         height: 3em;
-        width: 80%;
+    
         border: 1px solid black;
         border-radius: 10px;
     }
     
+
+
+    .btn{
+        background-color: darkmagenta;
+        color: white;
+    }
+
+
+  

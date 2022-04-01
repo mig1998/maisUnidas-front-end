@@ -1,32 +1,44 @@
-
 <article class="container-fluid">
 
-<section class="row">
-<form class="col-md-6" action="">
-    <fieldset>
-        <legend>Cadastro</legend>
-        <label for="nome">Nome Completo:</label>
-        <input type="text" [(ngModel)]="usuario.nome" placeholder="Nome Completo" id="nome" name="nome">
-
-        <label for="email">Email:</label>
-        <input type="email" [(ngModel)]="usuario.usuario" placeholder="Email" id="email" name="email">
-
-        <label for="senha">senha:</label>
-        <input type="password" (input)="confirmarSenha($event)" placeholder="Senha" id="senha" name="senha">
-
-        <label for="confirmsenha">Confirmar Senha:</label>
-        <input type="password" [(ngModel)]="usuario.senha"  placeholder="Confirmar Senha" id="confirmsenha" name="confirmsenha">
-     
-     
-        <button class="btn btn-primary mt-2" type="submit" (click)="cadastrarUsuario()">Cadastrar</button>
-        <a class="btn btn-danger ml-4 mt-2 p-2" routerLink="/entrar">Cancelar</a>
-    </fieldset>
-
-</form>
+        <section class="row">
+                <section class="col-md-6 borda mt-4"><img src="../../assets/imgs/cad2.png" width="500" height="600" alt=""></section>
 
 
-<section class="col-md-6">imagemAAA</section>
+                
+                <section class="col-md-6 text-center mt-4">
+                        <form class="text-monospace form-group" action="">
 
-</section>
+                                <h3 class="display-4">Cadastro</h3>
+                                <label for="nome">Nome Completo:</label>
+                                <input  class="form-control" type="text" [(ngModel)]="usuario.nome" placeholder="Nome Completo" id="nome"
+                                        name="nome">
+
+                                <label for="email">Email:</label>
+                                <input class="form-control" type="email" [(ngModel)]="usuario.usuario" placeholder="Email" id="email"
+                                        name="email">
+
+                                <label for="senha">senha:</label>
+                                <input class="form-control" type="password" (input)="confirmarSenha($event)" placeholder="Senha" id="senha"
+                                        name="senha">
+
+                                <label for="confirmsenha">Confirmar Senha:</label>
+                                <input class="form-control" type="password" [(ngModel)]="usuario.senha" placeholder="Confirmar Senha"
+                                        id="confirmsenha" name="confirmsenha">
+
+
+                                <button class="btn btn-cad mt-2 p-3" type="submit"
+                                        (click)="cadastrarUsuario()">Cadastrar</button>
+                                <a class="btn btn-cancel ml-4 mt-2 p-3" routerLink="/entrar">Cancelar</a>
+
+                        </form>
+                </section>
+
+            
+        </section>
+
+
+        <video autoplay loop poster="../../assets/video/fundo.png" width="" class="bg-video" type="video/mp4">
+                <source src="../../assets/video/background.mp4">
+        </video>
 
 </article>
