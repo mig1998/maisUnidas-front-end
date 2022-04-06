@@ -1,44 +1,49 @@
 <article class="container-fluid">
 
-        <section class="row">
-                <section class="col-md-6 borda mt-4"><img src="../../assets/imgs/cad2.png" width="500" height="600" alt=""></section>
+        <section class="row d-flex justify-content-center">
 
 
-                
-                <section class="col-md-6 text-center mt-4">
+                <section class="col-md-8 text-center mt-4">
+                        <img src="../../assets/imgs/logoUnidas.png" width="250" height="170" alt="">
+
                         <form class="text-monospace form-group" action="">
-
-                                <h3 class="display-4">Cadastro</h3>
+                                <br>
+                                <h1 class="">Cadastro</h1>
                                 <label for="nome">Nome Completo:</label>
-                                <input  class="form-control" type="text" [(ngModel)]="usuario.nome" placeholder="Nome Completo" id="nome"
-                                        name="nome">
+                                <input class="form-control" type="text" [(ngModel)]="usuario.nome"
+                                        placeholder="Nome Completo" id="nome" name="nome">
 
                                 <label for="email">Email:</label>
-                                <input class="form-control" type="email" [(ngModel)]="usuario.usuario" placeholder="Email" id="email"
-                                        name="email">
+                                <input class="form-control" type="email" [(ngModel)]="usuario.usuario"
+                                        placeholder="Email" id="email" name="email">
+                                <label for="foto">Descricao:</label>
+                                <textarea class="form-control" type="email" cols="3" rows="4" [(ngModel)]="usuario.descricao"
+                                        placeholder="sobre Você" id="email" name="descricao"></textarea>
+
+                                <label for="foto">Link da Foto:</label>
+                                <input class="form-control" type="email" [(ngModel)]="usuario.foto"
+                                        placeholder="Link da foto" id="email" name="foto">
 
                                 <label for="senha">senha:</label>
-                                <input class="form-control" type="password" (input)="confirmarSenha($event)" placeholder="Senha" id="senha"
-                                        name="senha">
+                                <input class="form-control" type="password" (input)="confirmarSenha($event)"
+                                        placeholder="Senha" id="senha" name="senha">
 
                                 <label for="confirmsenha">Confirmar Senha:</label>
-                                <input class="form-control" type="password" [(ngModel)]="usuario.senha" placeholder="Confirmar Senha"
-                                        id="confirmsenha" name="confirmsenha">
+                                <input class="form-control" type="password" [(ngModel)]="usuario.senha"
+                                        placeholder="Confirmar Senha" id="confirmsenha" name="confirmsenha">
 
 
-                                <button class="btn btn-cad mt-2 p-3" type="submit"
+                                <button class="btn btn-cad m-4 p-2" type="submit"
                                         (click)="cadastrarUsuario()">Cadastrar</button>
-                                <a class="btn btn-cancel ml-4 mt-2 p-3" routerLink="/entrar">Cancelar</a>
+                                <a class="btn btn-cancel m-4 p-2" routerLink="/entrar">Cancelar</a>
 
                         </form>
                 </section>
 
-            
+
         </section>
 
 
-        <video autoplay loop poster="../../assets/video/fundo.png" width="" class="bg-video" type="video/mp4">
-                <source src="../../assets/video/background.mp4">
-        </video>
+
 
 </article>

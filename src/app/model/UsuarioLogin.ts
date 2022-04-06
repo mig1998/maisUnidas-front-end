@@ -8,6 +8,7 @@ export class UsuarioLogin{
     
     public senha: string;
     
+    public descricao: string;
     
     public foto: string;
     

@@ -28,6 +28,7 @@ Entrar() {
       this.usuarioLogin = resp;
       environment.token=this.usuarioLogin.token      
       environment.nome=this.usuarioLogin.nome
+      environment.descricao=this.usuarioLogin.descricao
       environment.foto=this.usuarioLogin.foto
       environment.id=this.usuarioLogin.id
 

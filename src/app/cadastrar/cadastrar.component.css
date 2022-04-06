@@ -1,18 +1,24 @@
 
 
 article{
-    background-color: rgb(235, 194, 194);
-background-size: cover;
-min-height: 40em;
-color: rgb(0, 0, 0);
+background:url("../../assets/imgs/flor.jpg");
+
+background-size:90em;
+background-position: center;
+background-repeat: no-repeat;
 }
+
+
 
 form{
- text-transform: capitalize; 
- margin-top: 6%;    
- font-size: 1.3em;
-}
 
+    background:white;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    
+    width: 60%;
+    margin: auto;
+    }
 
 
 
@@ -25,7 +31,11 @@ input {
 
 
 
-
+textarea{
+    resize: none; 
+    width: 50%;
+    margin: auto;
+}
 
 
 .btn-cad{
@@ -39,5 +49,4 @@ input {
     color: white;
     background:rgb(216, 62, 62);
 }
-
 

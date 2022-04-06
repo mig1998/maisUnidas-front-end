@@ -3,32 +3,29 @@
   <section class="row">
 
 
-    <section class="col-md-3 border border-primary">
+    <section class="col-md-3 perfil">
 
-      <h1>PERFIL:</h1>
 
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid animi aut corrupti libero mollitia tempora
-        porro ipsa ad commodi, expedita illum nisi qui quasi. Voluptatem incidunt corporis fugit? Ipsa, a.
-      </p>
+      <img src={{foto}} width="200" class="border rounded-circle" alt="">
 
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, earum. Aperiam totam earum, facilis
-        dolorem ad odio cupiditate hic, veniam incidunt optio, reprehenderit quaerat sequi repellat error! Consequuntur,
-        impedit quae.</p>
-    </section>
+      <h3>{{nome}}</h3>
+      <p class="lead">{{descricao}}</p>
+
+
+      </section>
 
 
 
 
 
-    <section class="col-md-9 mt-3">
+    <section class="col-md-6 mt-3">
 
       <div class="text-left">
-      <button class="btn btn-primary" data-toggle="modal" data-target="#novaPostagem">Nova Posttagem</button>
+      <input  class="text-center inputPostagem" name=""  data-toggle="modal" placeholder="Sua Postagem" data-target="#novaPostagem">
       </div>
       <!-- POSTAGENS -->
 
-      <article class="container-fluid" id="postagens">
+      <article class="container-fluid mt-5" id="postagens">
 
         <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
           <li class="nav-item">
