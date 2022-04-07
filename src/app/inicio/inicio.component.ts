@@ -47,10 +47,10 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // if (environment.token == '') {
-    //   this.alertas.showAlertDanger('sessão expirada');
-    //   this.router.navigate(['/entrar'])
-    // }
+    if (environment.token == '') {
+      this.alertas.showAlertDanger('sessão expirada');
+      this.router.navigate(['/entrar'])
+    }
 
     this.findAllPost();
     this.findAllTemas();
