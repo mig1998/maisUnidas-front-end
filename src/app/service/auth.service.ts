@@ -10,34 +10,59 @@ import { UsuarioLogin } from '../model/UsuarioLogin';
 })
 export class AuthService {
 
-  constructor(private html:HttpClient) { 
+  constructor(private http: HttpClient) {
 
+  }
+
+  Entrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin> {
+    return this.http.post<UsuarioLogin>('https://unidasheroku.herokuapp.com/usuarios/logar', usuarioLogin);
   }
 
 
 
-
-  Entrar(usuarioLogin:UsuarioLogin):Observable<UsuarioLogin>{
-    return this.html.post<UsuarioLogin>('https://unidasheroku.herokuapp.com/usuarios/logar',usuarioLogin);
+  Cadastrar(usuario: Usuario): Observable<Usuario> {
+    return this.http.post<Usuario>('https://unidasheroku.herokuapp.com/usuarios/cadastrar', usuario);
   }
 
 
-
-  Cadastrar(usuario:Usuario):Observable<Usuario>{
-    return this.html.post<Usuario>('https://unidasheroku.herokuapp.com/usuarios/cadastrar',usuario);
-
+  getAllUsers(): Observable<Usuario[]> {
+    return this.http.get<Usuario[]>('https://unidasheroku.herokuapp.com/usuarios/all');
   }
 
 
-  logado(){
-    let ok:boolean=false;
+  getByIdUser(id: number): Observable<Usuario> {
+    return this.http.get<Usuario>(`https://unidasheroku.herokuapp.com/usuarios/${id}`);
+  }
 
 
-    if(environment.token!=''){
-      ok=true;
+  deleteUser(id: number) {
+    return this.http.get<Usuario>(`https://unidasheroku.herokuapp.com/usuarios/${id}`);
+  }
+
+
+  logado() {
+    let ok: boolean = false;
+
+
+    if (environment.token != '') {
+      ok = true;
     }
 
     return ok;
   }
 
+
+
+  adm() {
+    let ok: boolean = false;
+
+
+    if (environment.tipo == 'adm') {
+      ok = true;
+    }
+
+    return ok;
+  }
 }
+
+

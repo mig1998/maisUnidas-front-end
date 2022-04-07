@@ -14,6 +14,7 @@ public descricao: string;
 
 public foto: string;
 
+public tipo:string;
 
 public postagem: Postagem[];
 }
