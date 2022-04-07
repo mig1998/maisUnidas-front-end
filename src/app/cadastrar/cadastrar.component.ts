@@ -11,43 +11,50 @@ import { AuthService } from '../service/auth.service';
 })
 export class CadastrarComponent implements OnInit {
 
-  usuario: Usuario= new Usuario;
+  usuario: Usuario = new Usuario;
 
-confirmSenha:string;
+  confirmSenha: string;
 
-tipoUsuario:string='normal';
+  tipoUsuario: string = 'normal';
 
 
   constructor(
-    private authService:AuthService,
+    private authService: AuthService,
     private router: Router,
-    private alertas:AlertasService
-    ) { }
+    private alertas: AlertasService
+  ) { }
 
   ngOnInit(): void {
-  window.scroll(0,0);
+    window.scroll(0, 0);
   }
 
-confirmarSenha(event:any){
-this.confirmSenha=event.target.value
-}
-
-
-
-cadastrarUsuario() {
-
-
-  if (this.confirmSenha === this.usuario.senha) {
-
-    this.usuario.tipo=this.tipoUsuario;
-
-    this.authService.Cadastrar(this.usuario).subscribe((resp: Usuario) => {
-      this.usuario = resp;
-      this.router.navigate(['/entrar']);
-      this.alertas.showAlertSuccess('Usuário cadastrado com sucesso!');
-    });
-  } else {
-    this.alertas.showAlertDanger('As senha não estão iguais.');
+  confirmarSenha(event: any) {
+    this.confirmSenha = event.target.value
   }
-}
+
+
+
+  cadastrarUsuario() {
+
+    if (this.usuario.nome == null || this.usuario.nome == null || this.usuario.senha == null) {
+      this.alertas.showAlertDanger("preencha todos os campos corretamente!")
+    } else {
+
+      if (this.confirmSenha === this.usuario.senha) {
+
+        this.usuario.tipo = this.tipoUsuario;
+
+        this.authService.Cadastrar(this.usuario).subscribe((resp: Usuario) => {
+          this.usuario = resp;
+          this.router.navigate(['/entrar']);
+          this.alertas.showAlertSuccess('Usuário cadastrado com sucesso!');
+        });
+      } else {
+        this.alertas.showAlertDanger('As senha não estão iguais.');
+      }
+
+    }
+
+
+  }
 }

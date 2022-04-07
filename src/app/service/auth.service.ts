@@ -25,6 +25,10 @@ export class AuthService {
   }
 
 
+putUser(usuario:Usuario):Observable<Usuario>{
+  return this.http.put<Usuario>('https://unidasheroku.herokuapp.com/usuarios/atualizar',usuario);
+}
+
   getAllUsers(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>('https://unidasheroku.herokuapp.com/usuarios/all');
   }

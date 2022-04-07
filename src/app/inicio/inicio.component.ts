@@ -33,6 +33,7 @@ export class InicioComponent implements OnInit {
   idUser = environment.id;
 
 
+
   key = 'data';
   reverse = true;
 
@@ -46,14 +47,17 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if (environment.token == '') {
-      this.alertas.showAlertDanger('sessão expirada');
-      this.router.navigate(['/entrar'])
-    }
+    // if (environment.token == '') {
+    //   this.alertas.showAlertDanger('sessão expirada');
+    //   this.router.navigate(['/entrar'])
+    // }
 
     this.findAllPost();
     this.findAllTemas();
+
   }
+
+
 
 findAllTemas(){
   this.temaService.getAllTema().subscribe((resp: Tema[])=>{
@@ -110,6 +114,7 @@ findByIdTema() {
         this.postagem=resp;
         this.alertas.showAlertSuccess("Publicado com Sucesso!")
         this.findAllPost();   
+        this.findByUserId();
         this.postagem=new Postagem();
       })
 
