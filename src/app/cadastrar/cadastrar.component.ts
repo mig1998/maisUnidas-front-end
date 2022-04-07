@@ -36,7 +36,16 @@ export class CadastrarComponent implements OnInit {
 
   cadastrarUsuario() {
 
-    if (this.usuario.nome == null || this.usuario.nome == null || this.usuario.senha == null) {
+    if(this.usuario.foto==null || this.usuario.foto.length<1){
+      this.usuario.foto="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDinLQGQ8fa-8DwHRxeCxmlddb7Om-RDDWHw&usqp=CAU";
+    }
+
+
+    if(this.usuario.descricao==null || this.usuario.descricao.length<1){
+      this.usuario.descricao=" escreva sobre você...";
+    }
+
+    if (this.usuario.nome == null || this.usuario.usuario == null || this.usuario.senha == null) {
       this.alertas.showAlertDanger("preencha todos os campos corretamente!")
     } else {
 

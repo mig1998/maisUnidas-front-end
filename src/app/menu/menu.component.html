@@ -20,11 +20,15 @@
                 <a class="nav-link active" routerLink="/sobre-nos">Sobre-nos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#contato" routerLink="">Contato</a>
+                <a class="nav-link active" href="/contato" routerLink="">Contato</a>
             </li>
         </ul>
 
         <ul class="navbar-nav ml-auto d-flex align-items-center text-white fs-16">
+            <li *ngIf="auth.adm()" class="nav-item pl-3">
+                <a routerLink="/usuarios" class="text-white"><i class="fa fa-users" aria-hidden="true">Gerenciar Usuarios</i>
+                </a>
+            </li>
             <li class="nav-item pl-3">
                 <a (click)="btnSair()" class="text-white" href="">Sair<i class="fa fa-sign-out" aria-hidden="true"></i>
                 </a>

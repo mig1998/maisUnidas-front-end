@@ -40,7 +40,7 @@ putUser(usuario:Usuario):Observable<Usuario>{
 
 
   deleteUser(id: number) {
-    return this.http.get<Usuario>(`https://unidasheroku.herokuapp.com/usuarios/${id}`);
+    return this.http.delete<Usuario>(`https://unidasheroku.herokuapp.com/usuarios/${id}`);
   }
 
 

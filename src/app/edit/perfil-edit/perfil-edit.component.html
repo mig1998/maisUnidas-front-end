@@ -3,12 +3,12 @@
     <section class="row d-flex justify-content-center">
 
 
-            <section class="col-md-8 text-center mt-4">
-                    <img src="../../assets/imgs/logoUnidas.png" width="250" height="170" alt="">
+            <section class="col-md-4 text-center mt-4">
+                <img src="../../assets/imgs/logoUnidas.png" width="250" height="170" alt="">
 
                     <form class="text-monospace form-group" action="">
                             <br>
-                            <h1 class="">Cadastro</h1>
+                            <h1 class="">Alterar Usuario</h1>
                             <label for="nome">Nome Completo:</label>
                             <input class="form-control" type="text" [(ngModel)]="usuario.nome"
                                     placeholder="Nome Completo" id="nome" name="nome">
@@ -33,9 +33,9 @@
                                     placeholder="Confirmar Senha" id="confirmsenha" name="confirmsenha">
 
 
-                            <button class="btn btn-cad m-4 p-2" type="submit"
-                                    (click)="altUser()">Cadastrar</button>
-                            <a class="btn btn-cancel m-4 p-2" routerLink="/entrar">Cancelar</a>
+                            <button class="btn btn-primary m-4 p-2" type="submit"
+                                    (click)="altUser()">Atualizar</button>
+                            <a class="btn btn-cancel m-4 p-2" routerLink="/inicio">Cancelar</a>
 
                     </form>
             </section>

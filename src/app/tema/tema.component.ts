@@ -33,10 +33,10 @@ export class TemaComponent implements OnInit {
         this.router.navigate(['/entrar'])
       }
   
-      // if (environment.tipo != 'adm') {
-      //   this.alertas.showAlertInfo("precisa ser adm pra acessar esta pagina");
-      //   this.router.navigate(['/home'])
-      // }
+      if (environment.tipo != 'adm') {
+        this.alertas.showAlertInfo("precisa ser adm pra acessar esta pagina");
+        this.router.navigate(['/inicio'])
+      }
   
 
       this.findAllTemas();

@@ -15,7 +15,6 @@ import { AppComponent } from './app.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
-import { PerfilComponent } from './perfil/perfil.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ContatoComponent } from './contato/contato.component';
@@ -28,13 +27,13 @@ import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component'
 import { PerfilDeleteComponent } from './delete/perfil-delete/perfil-delete.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { TemaComponent } from './tema/tema.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CadastrarComponent,
-    PerfilComponent,
     RodapeComponent,
     MenuComponent,
     SobreNosComponent,
@@ -48,7 +47,8 @@ import { TemaComponent } from './tema/tema.component';
     TemaDeleteComponent,
     PerfilDeleteComponent,
     PostagemDeleteComponent,
-    TemaComponent
+    TemaComponent,
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,

@@ -1,17 +1,23 @@
-<!-- PERFIL -->
 <article class="container-fluid text-center">
   <section class="row">
 
 
-    <section class="col-md-2 mt-5">
-
-
-      <img src={{foto}} width="200" class="border rounded-circle" alt="">
-
+    <section class="col-md-3 mt-5">
+      <!-- PERFIL -->
+      
+      <div class="m-2">
+      <img src={{foto}} width="150" class="border rounded-circle" alt="">
+      </div>
+      
+      <div class="m-2">
       <h3>{{nome}}</h3>
-      <p class="lead">{{descricao}}</p>
+      <textarea name="" id="" cols="25" rows="8" placeholder={{descricao}} disabled></textarea>
+      </div>
 
-
+      <div class="mt-2">
+        <a class="fs-20" [routerLink]="['/perfil-edit',idUser]"><i class="fa fa-pencil-square-o " aria-hidden="true">
+            editar usuario</i></a>
+      </div>
     </section>
 
 
@@ -21,12 +27,12 @@
     <section class="col-md-6 mt-5 ml-5">
 
       <div class="">
-        <img src={{foto}} class="rounded-circle" width="50" alt="">
+        <img src={{foto}} class="rounded-circle imgperfil" width="50" alt="">
         <input class="text-center inputPostagem" name="" data-toggle="modal" placeholder="Sua Postagem"
           data-target="#novaPostagem">
       </div>
 
-
+      
       <!-- POSTAGENS -->
 
       <article class="container-fluid mt-5" id="postagens">
@@ -37,8 +43,9 @@
               aria-controls="nav-TodasPostagens" aria-selected="true">Todas Postagens</a>
           </li>
           <li class="nav-item">
-            <a  (click)='findByUserId()' class="nav-link" id="MinhasPostagens-tab" data-toggle="tab" href="#MinhasPostagens" role="tab"
-              aria-controls="MinhasPostagens" aria-selected="false">minhas Postagens</a>
+            <a (click)='findByUserId()' class="nav-link" id="MinhasPostagens-tab" data-toggle="tab"
+              href="#MinhasPostagens" role="tab" aria-controls="MinhasPostagens" aria-selected="false">minhas
+              Postagens</a>
           </li>
         </ul>
 
@@ -48,16 +55,19 @@
             aria-labelledby="TodasPostagens-tab">
 
             <div *ngFor="let postagem of listaPostagem | orderBy: key: reverse" class="mt-4 card">
-         
-              <div  class="card-body">
+
+              <div class="card-body">
+                <p class="text-left" style="font-size: 20px;"><img src={{postagem.usuario.foto}} class="rounded-circle"
+                    width="30" alt="">{{postagem.usuario.nome}}</p>
+
                 <h3 class="card-title">{{postagem.titulo}}</h3>
-                <p class="text-left"><small class="text-muted"><img src={{postagem.usuario.foto}} class="rounded-circle" width="30" alt="">{{postagem.usuario.nome}}</small></p>
-          
-                <p class="card-text"><small class="text-muted">{{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}</small></p>
-                  <img src={{postagem.anexo}} width="500" alt="">
-                  <p class="card-text lead">{{postagem.descricao}}</p>
+                <p class="card-text lead">{{postagem.descricao}}</p>
+                <img src={{postagem.anexo}} width="500" alt="">
+                <p class="card-text text-right"><small class="text-muted">{{postagem.data | date: 'dd/MM/yyyy'}} às
+                    {{postagem.data | date: 'HH:mm'}}</small></p>
+
               </div>
-         
+
             </div>
 
           </div>
@@ -69,18 +79,20 @@
 
 
             <div *ngFor="let postagem of usuario.postagem | orderBy: key: reverse" class="mt-4 card">
-         
-              <div  class="card-body">
+
+              <div class="card-body">
+                <p class="text-left" style="font-size: 20px;"><img src={{usuario.foto}} class="rounded-circle"
+                    width="30" alt="">{{usuario.nome}}</p>
+
                 <h3 class="card-title">{{postagem.titulo}}</h3>
-                <p class="text-left"><small class="text-muted"><img src={{usuario.foto}} width="50"class="rounded-circle" alt="">{{usuario.nome}}</small></p>
-          
-                <p class="card-text"><small class="text-muted">{{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}</small></p>
-                  <img src={{postagem.anexo}} width="500" alt="">
-                  <p class="card-text lead">{{usuario.nome}}</p>
+                <p class="card-text lead">{{postagem.descricao}}</p>
+                <img src={{postagem.anexo}} width="500" alt="">
+                <p class="card-text text-right"><small class="text-muted">{{postagem.data | date: 'dd/MM/yyyy'}} às
+                    {{postagem.data | date: 'HH:mm'}}</small></p>
 
                 <a [routerLink]="['/postagem-edit', postagem.id]" class="text-info mr-3" href="">Editar</a>
                 <a [routerLink]="['/postagem-delete', postagem.id]" class="text-danger" href="">Apagar</a>
-    
+
               </div>
             </div>
 

@@ -58,7 +58,6 @@ export class InicioComponent implements OnInit {
   }
 
 
-
 findAllTemas(){
   this.temaService.getAllTema().subscribe((resp: Tema[])=>{
     this.listaTemas=resp;

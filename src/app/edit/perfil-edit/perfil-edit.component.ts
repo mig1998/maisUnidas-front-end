@@ -14,7 +14,6 @@ export class PerfilEditComponent implements OnInit {
   usuario: Usuario = new Usuario();
 
   confirmarSenha: string;
-  tipoUsuario: string;
 
 
   constructor(
@@ -44,9 +43,6 @@ export class PerfilEditComponent implements OnInit {
 
 
 
-  tipoUser(event: any) {
-    this.tipoUsuario = event.target.value
-  }
 
   confirmeSenha(event: any) {
     this.confirmarSenha = event.target.value
@@ -59,13 +55,23 @@ export class PerfilEditComponent implements OnInit {
   }
 
   altUser() {
-    if (this.usuario.nome == null || this.usuario.nome == null || this.usuario.senha == null) {
+
+    if (this.usuario.foto == null || this.usuario.foto.length < 1) {
+      this.usuario.foto = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDinLQGQ8fa-8DwHRxeCxmlddb7Om-RDDWHw&usqp=CAU";
+    }
+
+
+    if (this.usuario.descricao == null || this.usuario.descricao.length < 1) {
+      this.usuario.descricao = " escreva sobre você...";
+    }
+
+
+    if (this.usuario.nome == null || this.usuario.usuario == null || this.usuario.senha == null) {
       this.alertas.showAlertDanger("Voce deixou algum campo vazio!")
     } else {
 
       if (this.confirmarSenha == this.usuario.senha) {
 
-        this.usuario.tipo = this.tipoUsuario;
 
         this.authService.putUser(this.usuario).subscribe((resp: Usuario) => {
           this.usuario = resp;
