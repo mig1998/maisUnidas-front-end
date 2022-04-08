@@ -68,6 +68,8 @@ export class PerfilEditComponent implements OnInit {
 
     if (this.usuario.nome == null || this.usuario.usuario == null || this.usuario.senha == null) {
       this.alertas.showAlertDanger("Voce deixou algum campo vazio!")
+    }else if(this.usuario.senha.length<6){
+      this.alertas.showAlertDanger("minimo de caracters na senha é 6")
     } else {
 
       if (this.confirmarSenha == this.usuario.senha) {

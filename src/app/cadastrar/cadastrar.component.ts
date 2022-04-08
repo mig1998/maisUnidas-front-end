@@ -11,7 +11,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class CadastrarComponent implements OnInit {
 
-  usuario: Usuario = new Usuario;
+  usuario: Usuario = new Usuario();
 
   confirmSenha: string;
 
@@ -47,7 +47,9 @@ export class CadastrarComponent implements OnInit {
 
     if (this.usuario.nome == null || this.usuario.usuario == null || this.usuario.senha == null) {
       this.alertas.showAlertDanger("preencha todos os campos corretamente!")
-    } else {
+    } else if(this.usuario.senha.length<6){
+      this.alertas.showAlertDanger("minimo de caracters na senha é 6")
+    }else{
 
       if (this.confirmSenha === this.usuario.senha) {
 

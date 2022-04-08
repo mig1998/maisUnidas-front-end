@@ -3,7 +3,7 @@
 article{
 background:url("../../assets/imgs/flor.jpg");
 
-background-size:90em;
+background-size:cover;
 background-position: center;
 background-repeat: no-repeat;
 }

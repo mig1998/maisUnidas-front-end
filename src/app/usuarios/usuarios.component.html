@@ -1,9 +1,8 @@
 <div class="container-fluid">
 
     <div class="row">
-      <div class="col-md-12">
         
-        <div class="card mt-5" *ngFor='let usuario of listaUsuarios | orderBy : key: reverse'>
+        <div class="card mt-5 col-md-3" *ngFor='let usuario of listaUsuarios | orderBy : key: reverse'>
   
           <div class="text-center mt-3" >
             <div>
@@ -20,6 +19,6 @@
           </div>
   
         </div>
-      </div>
+      
     </div>
   </div>
