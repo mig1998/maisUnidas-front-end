@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Postagem } from 'src/app/model/Postagem';
 import { Tema } from 'src/app/model/Tema';
+import { Usuario } from 'src/app/model/Usuario';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { PostagemService } from 'src/app/service/postagem.service';
 import { TemaService } from 'src/app/service/tema.service';
@@ -21,6 +22,10 @@ export class PostagemEditComponent implements OnInit {
   listaTemas: Tema[]
   idTema: number
 
+
+  usuario: Usuario = new Usuario();
+  idUser:number
+
   constructor(
     private temaService: TemaService,
     private postagemService: PostagemService,
@@ -31,15 +36,14 @@ export class PostagemEditComponent implements OnInit {
 
 
   ngOnInit(): void {
-    if (environment.token == '') {
-      this.alertas.showAlertDanger("sessão expirada");
+     if (environment.token == '') {
+       this.alertas.showAlertDanger("sessão expirada");
       this.router.navigate(['/entrar'])
     }
 
+    this.idUser= this.route.snapshot.params['id']
 
-    let id = this.route.snapshot.params['id']
-
-    this.findByIdPostagem(id);
+    this.findByIdPostagem(this.idUser);
     this.findAllTema();
   }
 
@@ -70,6 +74,8 @@ export class PostagemEditComponent implements OnInit {
 
 
   atualizarPostagem() {
+    this.tema.id = this.idTema;
+    this.postagem.tema=this.tema;
 
 
     if (this.postagem.titulo == null || this.postagem.titulo.length <1  || this.postagem.tema == null || this.postagem.descricao.length <1 || this.postagem.descricao == null) {

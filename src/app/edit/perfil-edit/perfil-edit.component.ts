@@ -14,7 +14,10 @@ export class PerfilEditComponent implements OnInit {
   usuario: Usuario = new Usuario();
 
   confirmarSenha: string;
+  contagem: number = 255;
 
+
+areatext:string;
 
   constructor(
     private authService: AuthService,
@@ -23,6 +26,7 @@ export class PerfilEditComponent implements OnInit {
     private alertas: AlertasService
 
   ) { }
+
 
   ngOnInit(): void {
     window.scroll(0, 0);
@@ -33,7 +37,7 @@ export class PerfilEditComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
 
-
+    
 
     let idUser = this.route.snapshot.params['id']
 
@@ -42,6 +46,39 @@ export class PerfilEditComponent implements OnInit {
   }
 
 
+  desc(event: any) {
+    let value = event.target.value.length
+
+    let char = event.keyCode
+
+    this.areatext= ((document.getElementById("desc") as HTMLInputElement).value);
+  
+
+    if (char >= 41 && char <= 126) {
+      if (value > 0 && value < 255) {
+        this.contagem--
+      }
+    }
+
+    if (char == 8) {
+      this.contagem++;
+      if (value < 1) {
+        this.contagem = 255;
+      }
+    }
+
+    if(value >254){
+      this.contagem=0;
+    }
+
+
+
+    if(char==32){
+      this.contagem--
+    }
+
+
+  }
 
 
   confirmeSenha(event: any) {
@@ -56,13 +93,15 @@ export class PerfilEditComponent implements OnInit {
 
   altUser() {
 
+
+
     if (this.usuario.foto == null || this.usuario.foto.length < 1) {
       this.usuario.foto = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDinLQGQ8fa-8DwHRxeCxmlddb7Om-RDDWHw&usqp=CAU";
     }
 
 
-    if (this.usuario.descricao == null || this.usuario.descricao.length < 1) {
-      this.usuario.descricao = " escreva sobre você...";
+    if (this.areatext == null || this.areatext.length < 1) {
+      this.areatext= " escreva sobre você...";
     }
 
 
@@ -73,7 +112,8 @@ export class PerfilEditComponent implements OnInit {
     } else {
 
       if (this.confirmarSenha == this.usuario.senha) {
-
+        
+        this.usuario.descricao=this.areatext;
 
         this.authService.putUser(this.usuario).subscribe((resp: Usuario) => {
           this.usuario = resp;

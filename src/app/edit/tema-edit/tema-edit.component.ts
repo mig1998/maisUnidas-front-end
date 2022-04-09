@@ -43,9 +43,10 @@ export class TemaEditComponent implements OnInit {
 
 
  updateTema() {
-    if (this.tema.nome == null || this.tema.descricao == null) {
-      this.alertas.showAlertDanger("preencha todos os campos corretamente")
-    } else {
+  if (this.tema.nome == null || this.tema.descricao == null || this.tema.nome.length <1 || this.tema.descricao.length <1) {
+    this.alertas.showAlertDanger("voce tem que preencher os campos!")
+
+  } else {
       this.temaService.editTema(this.tema).subscribe((resp: Tema) => {
         this.tema = resp;
         this.alertas.showAlertSuccess("tema atualizado com sucesso")

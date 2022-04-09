@@ -22,8 +22,8 @@ export class TemaService {
     return this.http.get<Tema[]>('https://unidasheroku.herokuapp.com/temas', this.token);
   }
 
-  getByNomeTema(nomes: string): Observable<Tema[]> {
-    return this.http.get<Tema[]>(`https://unidasheroku.herokuapp.com/temas/nomes/${nomes}`, this.token);
+  getByNomeTema(nome: string): Observable<Tema[]> {
+    return this.http.get<Tema[]>(`https://unidasheroku.herokuapp.com/temas/nome/${nome}`, this.token);
   }
 
   getByIdTema(id: number): Observable<Tema> {

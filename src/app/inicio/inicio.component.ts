@@ -54,6 +54,8 @@ export class InicioComponent implements OnInit {
 
     this.findAllPost();
     this.findAllTemas();
+window.scroll(0,0)
+
 
   }
 
