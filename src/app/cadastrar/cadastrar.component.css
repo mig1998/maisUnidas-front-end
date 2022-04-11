@@ -21,7 +21,9 @@ form{
     color: black;
     }
 
-
+form a{
+    color:rgb(43, 8, 77);
+}
 
 input {
     display: block;

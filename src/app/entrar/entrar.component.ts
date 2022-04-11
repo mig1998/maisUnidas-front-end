@@ -40,9 +40,9 @@ Entrar() {
 
       this.router.navigate(['/inicio']);
     }, erro => {
-        if(erro.status==500)
+        if(erro.status!=200){
       this.alertas.showAlertDanger('Houve um erro ao entrar, verifique o e-mail e a senha');
-    
+        }
     });
   }
 

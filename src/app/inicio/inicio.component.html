@@ -7,7 +7,7 @@
         <!-- PERFIL -->
 
         <div class="m-2">
-          <img src={{foto}} class="imgperfil" alt="">
+          <img src={{foto}} class="imgperfil" alt="" onerror="this.style.display='none'">
         </div>
 
         <h3>{{nome}}</h3>
@@ -29,7 +29,7 @@
       <section class="col-md-7 mt-5 ml-2">
 
         <div class="">
-          <img src={{foto}} class="imgpublicar mr-4" alt="">
+          <img src={{foto}} class="imgpublicar mr-4" alt="" onerror="this.style.display='none'">
           <input class="text-center inputPostagem" name="" data-toggle="modal" placeholder="Sua Postagem"
             data-target="#novaPostagem">
         </div>
@@ -75,12 +75,12 @@
 
                 <div class="card-body">
                   <p class="text-left" style="font-size: 20px;"><img src={{postagem.usuario.foto}} class="imgpost mr-2"
-                      alt=""> {{postagem.usuario.nome}}</p>
+                      alt="" onerror="this.style.display='none'"> {{postagem.usuario.nome}}</p>
 
                   <p class="card-title text-left">Tema: {{postagem.tema.nome}}</p>
                   <h3 class="card-title">{{postagem.titulo}}</h3>
                   <p class="card-text ">{{postagem.descricao}}</p>
-                  <img src={{postagem.anexo}} width="100%" alt="">
+                  <img src={{postagem.anexo}} height="500px" onerror="this.style.display='none'" width="100%" alt=" " >
                   <p class="card-text text-right"><small class="text-muted">{{postagem.data | date: 'dd/MM/yyyy'}} às
                       {{postagem.data | date: 'HH:mm'}}</small></p>
 
@@ -99,12 +99,12 @@
 
                 <div class="card-body">
                   <p class="text-left" style="font-size: 20px;"><img src={{usuario.foto}} class="imgpost mr-2"
-                      alt="">{{usuario.nome}}</p>
+                      alt="" onerror="this.style.display='none'">{{usuario.nome}}</p>
 
                   <p class="card-title text-left">Tema: {{postagem.tema.nome}}</p>
                   <h3 class="card-title">{{postagem.titulo}}</h3>
                   <p class="card-text ">{{postagem.descricao}}</p>
-                  <img src={{postagem.anexo}} width="100%" alt="">
+                  <img src={{postagem.anexo}} height="500px"  width="100%"  alt="" onerror="this.style.display='none'">
                   <p class="card-text text-right"><small class="text-muted">{{postagem.data | date: 'dd/MM/yyyy'}} às
                       {{postagem.data | date: 'HH:mm'}}</small></p>
 
@@ -146,10 +146,10 @@
 
           <div class="form-group">
             <label for="titulo">Titulo</label>
-            <input type="text" id="titulo" [(ngModel)]="postagem.titulo" class="form-control">
+            <input type="text" id="titulo" size="1"  maxlength="500" [(ngModel)]="postagem.titulo" class="form-control">
 
             <label for="descricao">Texto</label>
-            <textarea name="texto" id="descricao" [(ngModel)]="postagem.descricao" rows="3"
+            <textarea name="texto" size="2000"  maxlength="2000" id="descricao" [(ngModel)]="postagem.descricao" rows="3"
               class="form-control"></textarea>
 
             <label for="titulo">Link da imagem</label>

@@ -21,7 +21,9 @@ article{
         color: black;
         }
     
-    
+    .forma a{
+        color:rgb(43, 8, 77);
+    }
     
     input {
         display: block;

@@ -21,7 +21,7 @@ export class InicioComponent implements OnInit {
 
 
   tema: Tema = new Tema();
-  listaTemas:Tema[];
+  listaTemas: Tema[];
   idTema: number;
 
   postagem: Postagem = new Postagem();
@@ -54,23 +54,23 @@ export class InicioComponent implements OnInit {
 
     this.findAllPost();
     this.findAllTemas();
-window.scroll(0,0)
+    window.scroll(0, 0)
 
 
   }
 
 
-findAllTemas(){
-  this.temaService.getAllTema().subscribe((resp: Tema[])=>{
-    this.listaTemas=resp;
-  })
-}
+  findAllTemas() {
+    this.temaService.getAllTema().subscribe((resp: Tema[]) => {
+      this.listaTemas = resp;
+    })
+  }
 
-findByIdTema() {
-  this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
-    this.tema = resp;
-  })
-}
+  findByIdTema() {
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
+      this.tema = resp;
+    })
+  }
 
   findAllPost() {
     this.postagemService.getAllPost().subscribe((resp: Postagem[]) => {
@@ -98,25 +98,30 @@ findByIdTema() {
 
   publicarPost() {
     this.tema.id = this.idTema;
-    this.postagem.tema=this.tema;
+    this.postagem.tema = this.tema;
 
 
-    this.usuario.id=this.idUser;
-    this.postagem.usuario=this.usuario;
+    this.usuario.id = this.idUser;
+    this.postagem.usuario = this.usuario;
 
 
 
-    if(this.postagem.titulo==null || this.postagem.descricao==null || this.postagem.tema==null){
+    if (this.postagem.titulo == null || this.postagem.descricao == null || this.postagem.tema == null) {
       this.alertas.showAlertDanger("Preencha todos os campos!");
     }
-    else{
 
-      this.postagemService.createPost(this.postagem).subscribe((resp:Postagem)=>{
-        this.postagem=resp;
+    if (this.postagem.titulo.length <5) {
+      this.alertas.showAlertDanger("Titulo tem que ter no minimo 5 caracters");
+    }
+
+    else {
+
+      this.postagemService.createPost(this.postagem).subscribe((resp: Postagem) => {
+        this.postagem = resp;
         this.alertas.showAlertSuccess("Publicado com Sucesso!")
-        this.findAllPost();   
+        this.findAllPost();
         this.findByUserId();
-        this.postagem=new Postagem();
+        this.postagem = new Postagem();
       })
 
 
