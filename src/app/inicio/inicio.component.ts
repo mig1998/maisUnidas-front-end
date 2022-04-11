@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { Usuario } from '../model/Usuario';
@@ -29,6 +30,8 @@ export class InicioComponent implements OnInit {
   listaPostagem: Postagem[];
 
 
+
+
   usuario: Usuario = new Usuario();
   idUser = environment.id;
 
@@ -47,13 +50,14 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if (environment.token == '') {
+     if (environment.token == '') {
       this.alertas.showAlertDanger('sessão expirada');
-      this.router.navigate(['/entrar'])
-    }
+     this.router.navigate(['/entrar'])
+     }
 
     this.findAllPost();
     this.findAllTemas();
+
     window.scroll(0, 0)
 
 
@@ -96,6 +100,7 @@ export class InicioComponent implements OnInit {
   }
 
 
+
   publicarPost() {
     this.tema.id = this.idTema;
     this.postagem.tema = this.tema;
@@ -110,7 +115,7 @@ export class InicioComponent implements OnInit {
       this.alertas.showAlertDanger("Preencha todos os campos!");
     }
 
-    if (this.postagem.titulo.length <5) {
+    if (this.postagem.titulo.length < 5) {
       this.alertas.showAlertDanger("Titulo tem que ter no minimo 5 caracters");
     }
 

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
+
 import { Usuario } from '../model/Usuario';
 import { UsuarioLogin } from '../model/UsuarioLogin';
 
@@ -42,6 +43,10 @@ putUser(usuario:Usuario):Observable<Usuario>{
   deleteUser(id: number) {
     return this.http.delete<Usuario>(`https://unidasheroku.herokuapp.com/usuarios/${id}`);
   }
+
+
+
+
 
 
   logado() {
